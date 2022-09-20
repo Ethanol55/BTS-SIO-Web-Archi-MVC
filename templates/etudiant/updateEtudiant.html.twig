@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+<h1>Formulaire de modification d'un etudiant</h1>
+<form method="post" action="/etudiant/{{ etudiant.getIdEtudiant }}">
+    <p>
+        <h3>Etudiant en question</h3>
+        <label for="login"> Login : {{ etudiant.getLogin }}</label>
+    <br />
+        <label for="nom"> Nom : {{ etudiant.getNom }}</label>
+    <br />
+        <label for="prenom"> Prenom : {{ etudiant.getPrenom }}</label>
+    <br />
+        <label for="email"> Email : {{ etudiant.getEmail }}</label>
+    <br />
+    <h3>Informations que vous pouvez modifier</h3>
+
+    <label for="login">Votre Nouveau Login : </label>
+    <input type="text" name="login" id="login" placeholder="Login" size="30" maxlength="15" />
+    <br />
+    <label for="prenom">Votre Nouveau Prenom : </label>
+    <input type="text" name="prenom" id="prenom" placeholder="First Name" size="30" maxlength="15" />
+    <br />
+    <label for="nom">Votre Nouveau Nom : </label>
+    <input type="text" name="nom" id="nom" placeholder="Last Name" size="30" maxlength="15" />
+    <br />
+    <label for="email">Votre Nouvel Email : </label>
+    <input type="email" name="email" id="email" placeholder="Email" size="30" maxlength="40" />
+    <br />
+    <label for="pass">Votre Nouveau Mot De Passe : </label>
+    <input type="password" name="pass" id="pass" placeholder="Password" size="30" maxlength="25" minlength="5" />
+    <br />
+
+    <button type="submit" name="submit"  >Valider la modification</button>
+    </p>
+</form>
+{% endblock %}

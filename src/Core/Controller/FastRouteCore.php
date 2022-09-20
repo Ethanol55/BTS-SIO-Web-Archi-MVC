@@ -37,3 +37,4 @@ class FastRouteCore
         }
     }
 }
+//Le controller vient analyser les demandes http et en fonction de ces dernieres, il va charger les bonnes classes de type controller, vont faire reference aux models si besoin

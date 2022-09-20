@@ -1,0 +1,11 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+    <h1>Liste des questions</h1>
+    {% for question in question %}
+        <a href="/detail/{{ question.getIdQuestion }}">{{ question.getLibelleQuestion }}</a><br>
+    {% endfor %}
+{% endblock %}
+

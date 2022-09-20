@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block titre %}Etudiant{% endblock %}
+{% block entity %}Etudiant{% endblock %}
+{% block content %}
+
+    <table>
+        <thead >
+        <tr>
+            <th>Identifiant</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>E-mail</th>
+
+        </tr>
+        </thead >
+        <tbody>
+        {% for etudiant in etudiants %}
+        <tr>
+            <td><a href="/etudiant/{{ etudiant.getIdEtudiant }}"> {{ etudiant.getLogin }}</a></td>
+            <td>{{ etudiant.getNom }}</td>
+            <td>{{ etudiant.getPrenom }}</td>
+            <td>{{ etudiant.getEmail }}</td>
+            {# <td><a href="/etudiant/{{etudiant.getIdEtudiant}}/del">Supprimer</a> </td>#}
+            <td><form method="post" action="/etudiant/{{ etudiant.getIdEtudiant }}/del">
+                <br><button type="submit" name="submit">Supprimer</button><br><br>
+            </form></td>
+
+
+        </tr>
+{% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
+

@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+
+
+{% block titre %}Ajout d'étudiant{% endblock %}
+{% block entity %}Etudiant{% endblock %}
+
+{% block content %}
+<h1>Formulaire D'ajout d'un étudiant</h1>
+<form method="post" action="/etudiant/add">
+    <p>
+        <label for="login">Votre Login</label> :
+        <input required type="text" name="login" id="login" placeholder="Login" size="30" maxlength="15" />
+        <br />
+        <label for="prenom">Votre Prenom : </label>
+        <input required type="text" name="prenom" id="prenom" placeholder="First Name" size="30" maxlength="15" />
+        <br />
+        <label for="Nom">Votre Nom : </label>
+        <input required type="text" name="nom" id="nom" placeholder="Last Name" size="30" maxlength="15" />
+        <br />
+        <label for="email">Votre Adresse Mail : </label>
+        <input required type="email" name="email" id="email" placeholder="Email" size="40" />
+        <br />
+        <label for="pass">Votre mot de passe : </label>
+        <input required type="password" name="pass" id="pass" placeholder="Password" size="25"  minlength="5" />
+        <br />
+        <label for="verifpass">Valider votre mot de passe : </label>
+        <input required type="password" name="verifpass" id="verifpass" placeholder="Verif" size="25"  minlength="5" />
+        <br />
+        <button type="submit" name="submit"  >Valider l'ajout</button>
+
+    </p>
+</form>
+{% endblock %}
